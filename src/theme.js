@@ -196,3 +196,23 @@ export const themeSettings = (mode) => {
         }
     };
 };
+
+//context for color mode
+export const ColorModeContext = createContext({
+    toggleColorMode: () => {}
+});
+//tao 1 context bang createContext de chia se chuc nang chuyen doi mau, tat ca cac component deu co the su dung
+export const useMode = () => {
+    const [mode, setMode] = useState("dark");
+
+    const colorMode = useMemo( // dung useMemo de toi uu hieu suat bang cach ghi nho gia tri cua 1 ham, chi tinh lai khi no thay doi
+        () => ({
+            toggleColorMode: () =>
+                setMode((prev) => (prev === "light" ? "dark" : "light")),
+        }), []
+    );
+
+    const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+
+    return [theme, colorMode];
+}

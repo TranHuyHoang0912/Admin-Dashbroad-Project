@@ -1,12 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { use } from "react";
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
 function App() {
+
+  const [theme, colorMode] = useMode;
+  
   return (
-    <div className="App">
-      
-    </div>
+    // ColorModeContext.Provider cung cap theme MUI cho toan bo ung dung
+    <ColorModeContext.Provider value={colorMode}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+      <div className="App">
+        <main className="content"></main>
+      </div>
+    </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 

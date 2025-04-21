@@ -1,10 +1,11 @@
-import React, { use } from "react";
-import { ColorModeContext, useMode } from "./theme";
+import React from "react";
+import { ColorModeContext, useMode} from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import TopBar from "./scenes/global/Topbar";
 
 function App() {
 
-  const [theme, colorMode] = useMode;
+  const [theme, colorMode] = useMode();
   
   return (
     // ColorModeContext.Provider cung cap theme MUI cho toan bo ung dung
@@ -12,7 +13,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline/>
       <div className="App">
-        <main className="content"></main>
+        <main className="content">
+          <TopBar/>
+        </main>
       </div>
     </ThemeProvider>
     </ColorModeContext.Provider>

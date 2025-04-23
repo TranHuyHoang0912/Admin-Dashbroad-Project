@@ -23,6 +23,27 @@ const Sidebar = () => {
     const [ isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Dashboard");
 
-    return <div>Sidebar</div>
+    return (
+        <Box
+        sx={{
+            "& .pro-side-bar-inner": {
+                background: `${colors.primary[400]} !important`
+            },
+            "& .pro-icon-wrapper": {
+                backgroundColor: "transparent !important"
+            },
+            "& .pro-image-item": {
+                padding: " 5px 35px 5px 20px !important"
+            },
+            "& .pro-inner-item:hover": {
+                color: " #868dbf #important"
+            },
+            "& .pro-menu-item.active": {
+                color: " #6870fa !important"
+            }
+        }}
+        >
+        </Box>
+    )
 }
 export default Sidebar;

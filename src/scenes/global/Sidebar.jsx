@@ -17,25 +17,27 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 
-const Item = ({ title, to, icon, selected, setSelected}) => {
+// component dai dien cho tung muc Sidebar
+const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  return(
-    <MenuItem active={selected === title} 
-    style={{color: colors.grey[100]}}
-    onClick={() => setSelected(title)}
-    icon={icon}
+  return (
+    <MenuItem
+      active={selected === title} // neu muc nay dang duoc chon (selected) thi tra ve title tuong ung
+      style={{ color: colors.grey[100] }}
+      onClick={() => setSelected(title)} // su kien
+      icon={icon}
     >
-    <Typography>{title}</Typography>
-    <Link to={to}/>
+      <Typography>{title}</Typography>
+      <Link to={to} />
     </MenuItem>
-  )
-}
+  );
+};
 
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false); // trang thai dong mo sidebar
   const [selected, setSelected] = useState("Dashboard");
 
   return (
@@ -117,81 +119,81 @@ const Sidebar = () => {
           {/* MENU ITEMS*/}
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-            title="Dashboard"
-            to="/"
-            icon={<HomeOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Dashboard"
+              to="/dashboard"
+              icon={<HomeOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Manage Team"
-            to="/team"
-            icon={<PeopleOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Manage Team"
+              to="/team"
+              icon={<PeopleOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Contacts"
-            to="/contacts"
-            icon={<ContactsOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Contacts"
+              to="/contacts"
+              icon={<ContactsOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Invoices Balances"
-            to="/invoices"
-            icon={<ReceiptOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Invoices Balances"
+              to="/invoices"
+              icon={<ReceiptOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Profile Form"
-            to="/form"
-            icon={<PersonOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Profile Form"
+              to="/form"
+              icon={<PersonOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Calendar"
-            to="/calendar"
-            icon={<CalendarTodayOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Calendar"
+              to="/calendar"
+              icon={<CalendarTodayOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="FAQ Page"
-            to="/faq"
-            icon={<HelpOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="FAQ Page"
+              to="/faq"
+              icon={<HelpOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Bar Chart"
-            to="/bar"
-            icon={<BarChartOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Bar Chart"
+              to="/bar"
+              icon={<BarChartOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Pie Chart"
-            to="/pie"
-            icon={<PieChartOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Pie Chart"
+              to="/pie"
+              icon={<PieChartOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Line Chart"
-            to="/line"
-            icon={<TimelineOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Line Chart"
+              to="/line"
+              icon={<TimelineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
             <Item
-            title="Geography Chart"
-            to="/geography"
-            icon={<MapOutlinedIcon/>}
-            selected={selected}
-            setSelected={setSelected}
+              title="Geography Chart"
+              to="/geography"
+              icon={<MapOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
             />
           </Box>
         </Menu>

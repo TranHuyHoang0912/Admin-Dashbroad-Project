@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Header from "../../component/Header";
+import Header from "../../components/Header";
 const Dashboard = () => {
     return (
         <Box>
